@@ -6,23 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/paint.css" />
+    <link rel="stylesheet" type="text/css" href="./css/slider.css" />
     <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css" />
-
-    <title>Document</title>
+    <title>Painter</title>
   </head>
   <body>
-    <!-- <div class="container"> -->
-    <div id="paintDiv"></div>
+    <div id="paintDiv" class="board"></div>
     <div class="palet">
-
-      <div id="PaletterBlue" class="colors"></div>
-      <div id="PaletterGreen" class="colors"></div>
-      <div id="PaletterYellow" class="colors"></div>
-      <div id="PaletterRed" class="colors"></div>
-      <button id ="ClearBoard"> Clear Board </button>
+      <div id="PaletterBlue" class="colors mainpallet"></div>
+      <div id="PaletterGreen" class="colors mainpallet"></div>
+      <div id="PaletterYellow" class="colors mainpallet"></div>
+      <div id="PaletterRed" class="colors mainpallet"></div>
+      <div id="PaletterBrown" class="colors mainpallet"></div>
+      <div class="containter text-center">
+        <button id="ClearBoard" onclick="clearBoard()">Clear Board</button>
+        <button id="eraser" onclick="erase()">Erase</button>
+        <div class="slidecontainer text-center">
+          <input
+            type="range"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="myRange"
+          />
+          <p>Font Size: <span id="font"></span></p>
+        </div>
+      </div>
     </div>
-  <!-- </div> -->
-
     <script src=" https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="./js/painter.js"></script>
   </body>

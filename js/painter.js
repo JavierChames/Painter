@@ -1,84 +1,106 @@
-var mainDiv = $("#paintDiv");
-// var color1 = $("#PaletterBlue");
-// var color2 = $("#PaletterGreen");
-// var color3 = $("#PaletterYellow");
-// var color4 = $("#PaletterRed");
+var mainDiv = $(".board");
+// var mainDiv = document.getElementsByClassName("board");
+
 var x;
 var y;
-var spanDot;
-var color ="black";
+var color = "black";
 
-  
-var PaletterBlue=document.getElementById("PaletterBlue");
-PaletterBlue.addEventListener("click", function(){
-  color="blue"
-});
-// paintColor("blue"));
 
-var PaletterGreen =document.getElementById("PaletterGreen");
-PaletterGreen.addEventListener("click", function(){
-  color="green"
+var PaletterBlue = document.getElementById("PaletterBlue");
+PaletterBlue.addEventListener("click", function () {
+  color = "blue"
+  // this.style.border="5px solid black";
+
+
 });
 
-// PaletterGreen.addEventListener("click", paintColor("green"));
+var PaletterGreen = document.getElementById("PaletterGreen");
+PaletterGreen.addEventListener("click", function () {
+  color = "green"
+  // this.style.border="5px solid black";
 
-var PaletterYellow =document.getElementById("PaletterYellow");
-PaletterYellow.addEventListener("click", function(){
-  color="Yellow"
-});
-
-// PaletterYellow.addEventListener("click", paintColor("yellow"));
-
-var PaletterRed =document.getElementById("PaletterRed");
-
-// PaletterRed.addEventListener("click", paintColor("red"));
-
-PaletterRed.addEventListener("click", function(){
-  color="red"
 });
 
 
-// function paintColor(selectedColor){
-  // console.log(selectedColor);
-//  if(selectedColor === "blue"){
-//    color="blue";
-//   // spanDot.css({"background-Color": "blue"});
-//  }
-//  if(selectedColor === "green"){
-//   color="green";
-//  }
-//   //  spanDot.setAttribute("background-color","blue");
-//   // css("background-color": "blue");
+var PaletterYellow = document.getElementById("PaletterYellow");
+PaletterYellow.addEventListener("click", function () {
+  color = "Yellow"
+  // this.style.border="5px solid black";
 
-//   console.log("blue");
-// }
+});
 
 
+var PaletterRed = document.getElementById("PaletterRed");
+PaletterRed.addEventListener("click", function () {
+  color = "red"
+  // this.style.border="5px solid black";
 
-mainDiv.mousemove(function (e) {
+});
+
+var PaletterBrown = document.getElementById("PaletterBrown");
+
+PaletterBrown.addEventListener("click", function () {
+  color = "brown"
+  // this.style.border="5px solid black";
+
+});
+
+
+function erase() {
+  color = "white"
+};
+
+
+
+// mainDiv.addEventListener("mousemove", showCoords());
+// {
+
+mainDiv.on('mousemove',function(e) {
   if (e.buttons == 1) {
     showCoords(e);
     draw(color);
   }
 });
-
+// }
 
 function showCoords(e) {
+  if (e.buttons == 1){
+    // var posi=mainDiv.position();
+    // x1 =posi.left;
+    // y1=posi.top;
   x = e.clientX;
   y = e.clientY;
-  // console.log(x,y);
-}
+  draw(color);
+  // var x1 = $(".board").position();
+    // alert("Top position: " + x1.top + " Left position: " + x1.left);
+
+  // console.log(x +","+y);
+}}
 
 function draw(color) {
-   spanDot = $("<span/>");
+  var spanDot = $("<span/>");
   spanDot.css({
     "position": "absolute",
-    "left": x,
-    "top": y,
-    "width": 3 + "px",
-    "height": 3 + "px",
+    "left": x- mainDiv[0].offsetLeft,
+    "top": y-mainDiv[0].offsetTop,
+    "width": slider.value + "px",
+    "height": slider.value + "px",
     "background-color": color
   })
   mainDiv.append(spanDot)
+}
+
+function clearBoard() {
+  var board = $(".board");
+  board.empty();
+}
+
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("font");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
 }
 

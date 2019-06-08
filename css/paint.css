@@ -1,40 +1,46 @@
-
-#paintDiv {
-    width: 500px;
-    height: 500px;
-    border: 2px black solid;
-    /* overflow: hidden; */
-    background-color: white;
-    /* cursor: pointer; */
-    /* position: relative; */
+.board {
+  width: 100%;
+  text-align: center;
+}
+.board {
+  width: 500px;
+  height: 500px;
+  border: 2px black solid;
+  background-color: white;
+  position: relative;
+  margin: auto;
 }
 
+.mainpallet {
+  width: 100px;
+  height: 40px;
+  border: 1px solid black;
+}
 
- #PaletterBlue {
-    width: 120px;
-    height:100px;
-     background-color: blue;
-     border: 1px solid black;
-  }
-  #PaletterGreen {
-    width: 120px;
-    height:100px;
-    background-color: rgb(15, 99, 30);
-    border: 1px solid black;
+#PaletterBlue {
+  background-color: blue;
 }
-  #PaletterYellow {
-    width: 120px;
-    height:100px;
-    background-color: yellow;
-    border: 1px solid black;
+#PaletterGreen {
+  background-color: green;
 }
-  #PaletterRed {
-    width: 120px;
-    height:100px;
-    background-color: #f11;
-    border: 1px solid black;
+#PaletterYellow {
+  background-color: yellow;
 }
-  .colors{
-    display: inline-block;
-  }
+#PaletterRed {
+  background-color: #f11;
+}
+#PaletterBrown {
+  background-color: brown;
+}
+.colors {
+  display: inline-block;
+  margin: 8px;
+}
 
+.palet {
+  width: 600px;
+  height: 120px;
+  background-color: aqua;
+  border: 1px solid black;
+  margin: auto;
+}
