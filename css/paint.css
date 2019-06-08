@@ -44,3 +44,9 @@
   border: 1px solid black;
   margin: auto;
 }
+
+.selected
+{
+  background-color: #f11;
+  font-weight: bold;
+}
