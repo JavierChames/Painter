@@ -3,61 +3,41 @@ var x;
 var y;
 var color = "black";
 var spanid = 1;
-// var clear = false;
+var clear = false;
 
 var PaletterBlue = document.getElementById("PaletterBlue");
 PaletterBlue.addEventListener("click", function () {
-  $("#eraser").toggleClass("selected");
+  toogleClear();
   color = "blue"
 });
 
 var PaletterGreen = document.getElementById("PaletterGreen");
 PaletterGreen.addEventListener("click", function () {
-  $("#eraser").toggleClass("selected");
+  toogleClear();
   color = "green"
 });
 
 var PaletterYellow = document.getElementById("PaletterYellow");
 PaletterYellow.addEventListener("click", function () {
-  $("#eraser").toggleClass("selected");
+  toogleClear();
   color = "Yellow"
 });
 
 var PaletterRed = document.getElementById("PaletterRed");
 PaletterRed.addEventListener("click", function () {
-  $("#eraser").toggleClass("selected");
+  toogleClear();
   color = "red"
 });
 
 var PaletterBrown = document.getElementById("PaletterBrown");
 PaletterBrown.addEventListener("click", function () {
-  $("#eraser").toggleClass("selected");
+  toogleClear();
   color = "brown"
 });
 
-// var spanRemove = document.getElementById("PaletterGreen");
-// PaletterGreen.addEventListener("click", function () {
-//   $("#eraser").toggleClass("selected");
-//   color = "green"
-// });
-
-
-
 function erase() {
-  // if (clear === false) {
-  // clear = true;
-  // } else {
-  // if (clear === true) {
-  // clear = false;
-  // var idClicked = jQuery(this).attr('id');
-  // Removes an element from the document
-  // var element = document.getElementById(idClicked);
-  // element.parentNode.removeChild(element);
-  // }
-
   color = "white"
-  // }
-  // }
+  clear = true;
 }
 
 mainDiv.on('mousemove', function (e) {
@@ -65,32 +45,6 @@ mainDiv.on('mousemove', function (e) {
     showCoords(e);
     draw(color);
   }
-});
-
-mainDiv.on('click', function (e) {
-  if (clear === true) {
-    // if (e.buttons == 1) {
-    var idClicked = jQuery(this).attr('id');
-    // Removes an element from the document
-    var element = document.getElementById(idClicked);
-    console.log(element.tagName);
-    // element.parentNode.removeChild(element);
-  }
-
-
-  // showCoords(e);
-  // draw(color);
-  // }
-
-  // var idClicked = jQuery(this).attr('id');
-  // Removes an element from the document
-  // var element = document.getElementById(idClicked);
-  // element.parentNode.removeChild(element);
-  // }
-
-
-
-
 });
 
 function showCoords(e) {
@@ -102,7 +56,6 @@ function showCoords(e) {
 }
 
 function draw(color) {
-
   var spanDot = $("<span/>");
   spanDot.attr("id", "spanid" + spanid++);
   spanDot.css({
@@ -121,7 +74,6 @@ function clearBoard() {
   board.empty();
 }
 
-
 var slider = document.getElementById("myRange");
 var output = document.getElementById("font");
 output.innerHTML = slider.value;
@@ -132,3 +84,10 @@ slider.oninput = function () {
 $("#eraser").click(function () {
   $(this).toggleClass("selected");
 });
+
+function toogleClear() {
+  if (clear === true) {
+    $("#eraser").toggleClass("selected");
+    clear = false;
+  }
+}
