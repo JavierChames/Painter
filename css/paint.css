@@ -1,8 +1,4 @@
 .board {
-  width: 100%;
-  text-align: center;
-}
-.board {
   width: 500px;
   height: 500px;
   border: 2px black solid;
@@ -13,7 +9,7 @@
 
 .mainpallet {
   width: 100px;
-  height: 40px;
+  height: 30px;
   border: 1px solid black;
 }
 
@@ -40,13 +36,28 @@
 .palet {
   width: 600px;
   height: 120px;
-  background-color: aqua;
-  border: 1px solid black;
+  background-color: gray;
+  border: 2px solid black;
   margin: auto;
 }
 
-.selected
-{
+.selected {
   background-color: #f11;
   font-weight: bold;
+}
+
+.color_chosse {
+  border: 3px solid white;
+}
+
+.removePMargin {
+  margin: 0 0 0px;
+}
+
+.SelectedColor {
+  color: blue;
+}
+
+.pstyle {
+  display: inline;
 }

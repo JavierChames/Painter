@@ -19,8 +19,16 @@
       <div id="PaletterRed" class="colors mainpallet"></div>
       <div id="PaletterBrown" class="colors mainpallet"></div>
       <div class="containter text-center">
-        <button id="ClearBoard" onclick="clearBoard()">Clear Board</button>
-        <button id="eraser" onclick="erase()" >Erase</button>
+        <p class="text-center removePMargin SelectedColor" id="selColorTxt">
+          Selected Color
+        </p>
+        <button id="ClearBoard" onclick="clearBoard()" style="right: 0px">
+          Clear Board
+        </button>
+        <p class="text-center pstyle">
+          Font/Eraser Size: <span id="font"></span>
+        </p>
+        <button id="eraser" onclick="erase()">Erase</button>
         <div class="slidecontainer text-center">
           <input
             type="range"
@@ -30,7 +38,6 @@
             class="slider"
             id="myRange"
           />
-          <p>Font Size: <span id="font"></span></p>
         </div>
       </div>
     </div>

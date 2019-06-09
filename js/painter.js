@@ -1,38 +1,36 @@
 var mainDiv = $(".board");
 var x;
 var y;
-var color = "black";
+var color = "blue";
 var spanid = 1;
 var clear = false;
 
+var selColorTxt = document.getElementById("selColorTxt");
+
+
 var PaletterBlue = document.getElementById("PaletterBlue");
 PaletterBlue.addEventListener("click", function () {
-  toogleClear();
-  color = "blue"
+  help_toogle_colors("blue")
 });
 
 var PaletterGreen = document.getElementById("PaletterGreen");
 PaletterGreen.addEventListener("click", function () {
-  toogleClear();
-  color = "green"
+  help_toogle_colors("green")
 });
 
 var PaletterYellow = document.getElementById("PaletterYellow");
 PaletterYellow.addEventListener("click", function () {
-  toogleClear();
-  color = "Yellow"
+  help_toogle_colors("Yellow")
 });
 
 var PaletterRed = document.getElementById("PaletterRed");
 PaletterRed.addEventListener("click", function () {
-  toogleClear();
-  color = "red"
+  help_toogle_colors("red")
 });
 
 var PaletterBrown = document.getElementById("PaletterBrown");
 PaletterBrown.addEventListener("click", function () {
-  toogleClear();
-  color = "brown"
+  help_toogle_colors("brown")
 });
 
 function erase() {
@@ -90,4 +88,10 @@ function toogleClear() {
     $("#eraser").toggleClass("selected");
     clear = false;
   }
+}
+
+function help_toogle_colors(Selectedcolor) {
+  toogleClear();
+  color = Selectedcolor;
+  selColorTxt.style.color = color;
 }
