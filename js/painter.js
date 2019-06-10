@@ -62,7 +62,9 @@ function draw(color) {
     "top": y,
     "width": slider.value + "px",
     "height": slider.value + "px",
-    "background-color": color
+    "background-color": color,
+    "border-radius": 10
+
   })
   mainDiv.append(spanDot);
 }
