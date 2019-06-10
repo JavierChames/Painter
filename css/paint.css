@@ -13,19 +13,19 @@
   border: 1px solid black;
 }
 
-#PaletterBlue {
+#blue {
   background-color: blue;
 }
-#PaletterGreen {
+#green {
   background-color: green;
 }
-#PaletterYellow {
+#yellow {
   background-color: yellow;
 }
-#PaletterRed {
+#red {
   background-color: #f11;
 }
-#PaletterBrown {
+#brown {
   background-color: brown;
 }
 .colors {

@@ -7,31 +7,13 @@ var clear = false;
 
 var selColorTxt = document.getElementById("selColorTxt");
 
+var btnGroup = document.getElementById("colorGrp");
+btnGroup.addEventListener("click", selecClr);
 
-var PaletterBlue = document.getElementById("PaletterBlue");
-PaletterBlue.addEventListener("click", function () {
-  help_toogle_colors("blue")
-});
-
-var PaletterGreen = document.getElementById("PaletterGreen");
-PaletterGreen.addEventListener("click", function () {
-  help_toogle_colors("green")
-});
-
-var PaletterYellow = document.getElementById("PaletterYellow");
-PaletterYellow.addEventListener("click", function () {
-  help_toogle_colors("Yellow")
-});
-
-var PaletterRed = document.getElementById("PaletterRed");
-PaletterRed.addEventListener("click", function () {
-  help_toogle_colors("red")
-});
-
-var PaletterBrown = document.getElementById("PaletterBrown");
-PaletterBrown.addEventListener("click", function () {
-  help_toogle_colors("brown")
-});
+function selecClr(e) {
+  var myColor = e.target.id;
+  color = myColor;
+}
 
 function erase() {
   color = "white"
@@ -41,7 +23,9 @@ function erase() {
 mainDiv.on('mousemove', function (e) {
   if (e.buttons == 1) {
     showCoords(e);
-    draw(color);
+    if (x + slider.value > 0) {
+      draw(color);
+    }
   }
 });
 
@@ -58,8 +42,8 @@ function draw(color) {
   spanDot.attr("id", "spanid" + spanid++);
   spanDot.css({
     "position": "absolute",
-    "left": x,
-    "top": y,
+    "left": x - slider.value,
+    "top": y - slider.value,
     "width": slider.value + "px",
     "height": slider.value + "px",
     "background-color": color,
