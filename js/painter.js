@@ -60,9 +60,12 @@ function clearBoard() {
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("font");
-output.innerHTML = slider.value;
+
+var outputNode = document.createTextNode(slider.value);
+output.appendChild(outputNode);
+
 slider.oninput = function () {
-  output.innerHTML = this.value;
+  output.innerText = slider.value;
 }
 
 $("#eraser").click(function () {
