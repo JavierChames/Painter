@@ -64,6 +64,7 @@ var output = document.getElementById("font");
 var outputNode = document.createTextNode(slider.value);
 output.appendChild(outputNode);
 
+
 slider.oninput = function () {
   output.innerText = slider.value;
 }
